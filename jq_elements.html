@@ -51,7 +51,7 @@
 			<li>meat</li>
 			<li>cheese</li>
 		</ul>
-		
+		<input id="addOne" type="button" value="add a rando number to the mix" />
 	</div>
 
 	<footer>
@@ -62,6 +62,9 @@
 		console.log("ora! ora! ora! ora!");
 		$('#header').html('This site is Awesome!');
 		$('ul').append("<li>"+addstuff()+"</li>");
+		$('#addOne').click(function(){
+			$('ul').append('<li>'+Math.round(Math.random()* 100)+'</li>');
+		});
 	</script>
 <!-- console
 	firefox $('ul li') return array like object
