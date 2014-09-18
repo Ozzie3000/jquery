@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jquery | </title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<!--
+<link rel="stylesheet" href="./css/.css" type="text/css" />
+-->
+<style type="text/css">
+	#header{
+		background-color: slategrey;
+		color: white;
+		font-family: sans-serif;
+		font-size: 1.3em;
+		font-size: 1.5vw;
+	}
+	#content{
+	
+		color: blue;
+		font-family: sans-serif;
+		font-size: 1.3vw;
+	}
+	#footer{
+		background-color: black;
+		color: white;
+		font-family: sans-serif;
+		font-size: 1.3vw;
+	}
+	body{
+		background-color: #eeeeee;
+	}
+</style>
+<script type="text/javascript">
+	function addstuff(x){
+		this.item = prompt("pick an item to \nadd to the list for \nFOOD TO EAT!!!");
+		return item;
+	}
+</script>
+</head>
+<body>
+	<h3></h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+	<div id="header">
+		<h1>This is my header!</h1>
+	</div>
+	<div id="content">
+		<p>Here is the content div for the site.</p>
+		<input id="yourName" type="text" placeholder="name here" />
+		<button id="aName">Submit</button>
+		<br />
+		<ul>
+			<li>meat</li>
+			<li>cheese</li>
+		</ul>
+		<br />
+		<input id="addOne" type="button" value="add a rando number to the mix" />
+	</div>
+
+	<footer>
+		<div id="footer">Copyright 2014 Ozzie3000</div>
+	</footer>
+	<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+	<script type="text/javascript">
+		console.log("ora! ora! ora! ora!");
+		$('#header').html('This site is Awesome!');
+		$('ul').append("<li>"+addstuff()+"</li>");
+		$('#addOne').click(function(){
+			$('ul').append('<li>'+Math.round(Math.random()* 100)+'</li>');
+		});
+	</script>
+<!-- console
+	firefox $('ul li') return array like object
+	chrome $('ul li') return array like object, actually shows your the collection
+
+	firefox $('ul li')[0];  zeroth element in array
+	chrome $('ul li')[0];  zeroth element in array, shows it to you
+
+	firefox $('ul li:eq(0)');  zeroth element in array
+	chrome $('ul li:eq(0)');  zeroth element in array, shows it to you
+
+-->
+</body>
+</html>
