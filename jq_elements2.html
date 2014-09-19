@@ -46,7 +46,7 @@
 		<h1>This is my header!</h1>
 	</div>
 	<div id="content">
-		<p>Here is the content div for the site.</p>
+		<p>Let's make a grocery list.  Oh yeah!</p>
 		<input id="yourName" type="text" value="Enter Your First Name" 
 		onblur="if(this.value=='')this.value='Enter Your First Name';" 
 		onfocus="if(this.value=='Enter Your First Name')this.value='';" />
@@ -57,9 +57,14 @@
 			<li>cheese</li>
 		</ul>
 		<br />
-		<input id="addOne" type="button" value="add a rando number to the mix" />
+		<input id="itemz" type="text" value="Enter a grocery item" 
+		onblur="if(this.value=='')this.value='Enter a grocery item';" 
+		onfocus="if(this.value=='Enter a grocery item')this.value='';" />
+		<button id="gotcha">Submit</button>
 	</div>
 
+
+	<br />	<br />
 	<footer>
 		<div id="footer">Copyright 2014 Ozzie3000</div>
 	</footer>
@@ -76,6 +81,17 @@
 				$('ul').prepend("<h4>"+nombre+"'s grocery list: "+"</h4>");
 			}else{
 				alert("Please enter your name!!!!!!!")
+			}
+		});
+
+		$('#gotcha').click(function(){
+			var listee = $('#itemz').val();
+			//alert(listee);
+			console.log(listee);
+			if(listee != 'Enter a grocery item'){
+				$('ul').append("<li>"+listee+"</li>");
+			}else{
+				alert("Please enter a grocery item!!!!!!!")
 			}
 		});
 
