@@ -47,7 +47,9 @@
 	</div>
 	<div id="content">
 		<p>Here is the content div for the site.</p>
-		<input id="yourName" type="text" placeholder="name here" />
+		<input id="yourName" type="text" value="Enter Your First Name" 
+		onblur="if(this.value=='')this.value='Enter Your First Name';" 
+		onfocus="if(this.value=='Enter Your First Name')this.value='';" />
 		<button id="aName">Submit</button>
 		<br />
 		<ul>
@@ -65,10 +67,19 @@
 	<script type="text/javascript">
 		console.log("ora! ora! ora! ora!");
 		$('#header').html('This site is Awesome!');
-		$('ul').append("<li>"+addstuff()+"</li>");
-		$('#addOne').click(function(){
-			$('ul').append('<li>'+Math.round(Math.random()* 100)+'</li>');
+	
+		$('#aName').click(function(){
+			var nombre = $('#yourName').val();
+			//alert(nombre);
+			console.log(nombre);
+			if(nombre != 'Enter Your First Name'){
+				$('ul').prepend("<h4>"+nombre+"'s grocery list: "+"</h4>");
+			}else{
+				alert("Please enter your name!!!!!!!")
+			}
 		});
+
+			
 	</script>
 <!-- console
 	firefox $('ul li') return array like object
