@@ -5,7 +5,50 @@
 <meta charset="utf-8">
 <meta name="description" content="HTML5 demos" />
 <link rel="stylesheet" href="./css/.css" type="text/css" />
+<style type="text/css">
+.cotainer{
+	//width: 100%;
+	height: 100%;
+	text-align: center;
+}
 
+.row{
+
+}
+
+.jumbotron{
+	text-align: center;
+	background-color: lightgrey;
+}
+
+.col-xs-3{
+	//border: 2px solid purple;
+	padding: 5px;
+	margin: 10px;
+	//display: inline-block;
+	display: inline-table;
+	position: center;
+}
+
+.panel.panel-primary{
+	//border-collapse: collapse;
+	//border: 5px solid yellow;
+	padding: 10px;
+}
+.panel-heading{
+	background-color: blue;
+	color: white;
+	border: 2px solid purple;
+	padding: 10px;
+}
+
+.panel-body{
+	color: black;
+	border: 2px solid purple;
+	padding: 10px;
+}
+
+</style>
 </head>
 <body>
 	<h3></h3>
@@ -13,21 +56,74 @@
 	<br /><br />
 
 
-		<div class="col-xs-3">
-			<div id="panel4" class="panel panel-primary">
-				#panel4
-			</div>
-			<divclass="panel-body">content>
-			</div>
-		</div>
 
+	<div class="cotainer">
+		<div class="jumbotron">
+			<h1>Are you ready?!?!</h1>
+			<button id="btn1">#btn1</button>
+			<button id="btn2">#btn2</button>
+			<button id="btn3">#btn3</button>
+			<button id="btn4">#btn4</button>
+		</div>
+	
+
+		<div class="row">
+			<div class="col-xs-3">
+				<div id="panel1" class="panel panel-primary">
+					<div class="panel-heading">
+						#panel1
+					</div>
+					<div class="panel-body">content
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-3">
+				<div id="panel2" class="panel panel-primary">
+					<div class="panel-heading">
+						#panel2
+					</div>
+					<div class="panel-body">content
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-3">
+				<div id="panel3" class="panel panel-primary">
+					<div class="panel-heading">
+						#panel3
+					</div>
+					<div class="panel-body">content
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-3">
+				<div id="panel4" class="panel panel-primary">
+					<div class="panel-heading">
+						#panel4
+					</div>
+					<div class="panel-body">content
+					</div>
+				</div>
+			</div>
+
+		</div>
+</div>
 
 
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
+// some properties will not be overridden if already affected by something else.
 	$(document).ready(function(){
 
-		$("#panel1").hide(300);
+		$("#panel1").hide(1500).show(1500).hide(1500).delay(3000).show(1500).hide(1500).show(1500);
+		$("#panel2").slideUp(1500).slideDown(1500).slideUp(1500).delay(3000).slideDown(1500).slideUp(1500).slideDown(1500);
+		$("#panel3").fadeOut(1500).fadeIn(1500).fadeOut(1500).delay(3000).fadeIn(1500).fadeOut(1500).fadeIn(1500);
+		$("#panel4").hide(1500).show(1500).toggle(1500).toggle(1500).fadeToggle(1500).fadeToggle(1500).slideToggle(1500).slideToggle(1500).hide(1500).show(1500).hide(1500).fadeIn(1500);
+
+		$('#panel1').css({color:'red', fontWeight:"bold"});
+		$('#panel2').css({opacity:"0.5"});
 	});
 
 </script>
