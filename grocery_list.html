@@ -32,9 +32,13 @@
 	}
 </style>
 <script type="text/javascript">
-	function addstuff(x){
-		this.item = prompt("pick an item to \nadd to the list for \nFOOD TO EAT!!!");
-		return item;
+	var addItem = function(){
+		var listee = $('#itemz').val();
+		if(listee != 'Enter a grocery item'){
+			$('ul').append("<li>"+listee+"</li>");
+		}else{
+			alert("Please enter a grocery item!!!!!!!")
+		}
 	}
 </script>
 </head>
@@ -68,47 +72,57 @@
 	<footer>
 		<div id="footer">Copyright 2014 Ozzie3000</div>
 	</footer>
-	<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
-	<script type="text/javascript">
-		console.log("ora! ora! ora! ora!");
-		$('#aName').click(function(){
-			var nombre = $('#yourName').val();
-			//alert(nombre);
-			console.log(nombre);
-			if(nombre != 'Enter Your First Name'){
-				$('ul').prepend("<h4>"+nombre+"'s grocery list: "+"</h4>");
-				$("#aName").on("mouseout", function(){
-					$("#aName").fadeOut(2000);
-					$("#yourName").fadeOut(2000);
-				});
-			}else{
-				alert("Please enter your name!!!!!!!")
-			}
-		});
+<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+	console.log("ora! ora! ora! ora!");
+	$('#aName').click(function(){
+		var nombre = $('#yourName').val();
+		//alert(nombre);
+		console.log(nombre);
+		if(nombre != 'Enter Your First Name'){
+			$('ul').prepend("<h4>"+nombre+"'s grocery list: "+"</h4>");
+			//$("#aName").on("mouseout", function(){
+				$("#aName").hide();
+				$("#yourName").hide();
+			//});
+		}else{
+			alert("Please enter your name!!!!!!!")
+		}
+	});
 
-		$('#gotcha').click(function(){
-			var listee = $('#itemz').val();
-			//alert(listee);
-			console.log(listee);
-			if(listee != 'Enter a grocery item'){
-				$('ul').append("<li>"+listee+"</li>");
-			}else{
-				alert("Please enter a grocery item!!!!!!!")
-			}
-		});
+$('#yourName').keypress(function(){
+		var nombre = $('#yourName').val();
+		//alert(nombre);
+		console.log(nombre);
+		if(nombre != 'Enter Your First Name'){
+			$('ul').prepend("<h4>"+nombre+"'s grocery list: "+"</h4>");
+			//$("#aName").on("mouseout", function(){
+				$("#aName").hide();
+				$("#yourName").hide();
+			//});
+		}else{
+			alert("Please enter your name!!!!!!!")
+		}
+	});
+
+	//$('#gotcha')
+		//.click(addItem)
+		//.keyup(addItem)
+	  //.keypress(addItem);
+  	//.blur(addItem)
+   	//.change(addItem);
+	
+	//$("#gotcha")
+	$("#gotcha").keypress(function(e) {
+		if(e.which == 13) {
+	    addItem;
+	   }
+	  });
+
+
 
 			
 	</script>
-<!-- console
-	firefox $('ul li') return array like object
-	chrome $('ul li') return array like object, actually shows your the collection
 
-	firefox $('ul li')[0];  zeroth element in array
-	chrome $('ul li')[0];  zeroth element in array, shows it to you
-
-	firefox $('ul li:eq(0)');  zeroth element in array
-	chrome $('ul li:eq(0)');  zeroth element in array, shows it to you
-
--->
 </body>
 </html>
