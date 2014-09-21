@@ -116,8 +116,15 @@
 <script type="text/javascript">
 // some properties will not be overridden if already affected by something else.
 	$(document).ready(function(){
-		$("#btn1").html("i got changed");
-		$("#panel1").html("also modified");
+		//$("#btn1").html("i got changed");
+		//$("#panel1").html("also modified");
+		//$("#panel2").html("i got <strong>changed</strong>");
+
+		//on is method JS event is click
+		$("#btn1").on("click", function(){
+			$("#panel1").slideToggle();
+		});
+
 	});
 
 </script>
