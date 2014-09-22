@@ -121,12 +121,86 @@
 		//$("#panel2").html("i got <strong>changed</strong>");
 
 		//on is method JS event is click
+		/*
 		$("#btn1").on("click", function(){
 			$("#panel1").slideToggle(500);
 		});
 
-	});
+		$("#btn2").on("click", function(){
+			$("#panel2").slideToggle(500);
+		});
 
+		$("#btn3").on("click", function(){
+			$("#panel3").slideToggle(500);
+		});
+
+		$("#btn4").on("click", function(){
+			$("#panel4").slideToggle(500);
+		});
+	*/
+
+/************* mouseover  ****
+		$("#btn1").on("mouseover", function(){
+			$("#panel1").slideToggle(500);
+		});
+
+		$("#btn2").on("mouseover", function(){
+			$("#panel2").slideToggle(500);
+		});
+
+		$("#btn3").on("mouseover", function(){
+			$("#panel3").slideToggle(500);
+		});
+
+		$("#btn4").on("mouseover", function(){
+			$("#panel4").slideToggle(500);
+		});
+
+	
+	****************/
+
+	//fade in
+		$("#btn1").on("mouseover", function(){
+			$("#panel1").fadeOut(500);
+		});
+
+		$("#btn2").on("mouseover", function(){
+			$("#panel2").fadeOut(500);
+		});
+
+		$("#btn3").on("mouseover", function(){
+			$("#panel3").fadeOut(500);
+		});
+
+		$("#btn4").on("mouseover", function(){
+			$("#panel4").fadeOut(500);
+		});
+
+
+		$("#btn1").on("click", function(){
+			$("#panel1").fadeIn(500);
+		});
+
+		$("#btn2").on("click", function(){
+			$("#panel2").fadeIn(500);
+		});
+
+		$("#btn3").on("click", function(){
+			$("#panel3").fadeIn(500);
+		});
+
+		$("#btn4").on("click", function(){
+			$("#panel4").fadeIn(500);
+		});
+
+		$("#btn1").on("click", function(){
+			$("#panel1 .panel-body").html("my new panel content.");
+		});
+
+
+
+
+	});	
 </script>
 </body>
 </html>
