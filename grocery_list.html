@@ -92,8 +92,6 @@
 
 $('#yourName').keypress(function(){
 		var nombre = $('#yourName').val();
-		//alert(nombre);
-		console.log(nombre);
 		if(nombre != 'Enter Your First Name'){
 			$('ul').prepend("<h4>"+nombre+"'s grocery list: "+"</h4>");
 			//$("#aName").on("mouseout", function(){
