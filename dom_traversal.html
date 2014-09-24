@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="./css/.css" type="text/css" -->
 <style type="text/css">
 	.special{
-		color: blue;
+		color: red;
+		font-weight: bold;
 	}
 
 ul{
@@ -51,6 +52,7 @@ ul{
 		$("li").eq(4).parent().parent().prev();
 		$("li").eq(4).parent().parent().prev().prev();
 
+/*
 		$("li").on('click', function(){
 			//$(this).next().hide();
 			//$("li").next().remove();
@@ -59,6 +61,21 @@ ul{
 			$(this).parent().addClass('special');
 			$(this).closest('.list').addClass('special'); // up the chain till class list
 		});
+	*/
+/*
+		$('.list').on('click', function(){
+			$(this).find('li').filter('.special').remove();
+		});
+*/
+
+		$('.list').on('mouseenter', function(){
+			$(this).find('.special').hide();
+		});
+
+		$('.list').on('click', function(){
+			$(this).find('.special').show();
+		});
+
 	});
 </script>
 </body>
