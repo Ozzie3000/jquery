@@ -11,12 +11,12 @@
 	<h3>DOM traversal</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-	<ul class="sublist">
-		<li>1</li>
-		<li>2</li>
-		<li>3</li>
+	<ul class="list">
+		<li>one</li>
+		<li class="special">two</li>
+		<li>three</li>
 		<li>
-			<ul>
+			<ul class="sbulist">
 				<li>a</li>
 				<li>b</li>
 				<li>c</li>
@@ -28,7 +28,18 @@
 <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript">
 	$(function(){
-
+		 //in console type each line 
+		$("li");
+		$("li").first();
+		$("li").last();
+		$("li").first().hide();
+		$("li").first().show();
+		$("li:eq(2)").hide();
+		$("li").eq(0).siblings();
+		$("li").eq(4).parent();
+		$("li").eq(4).parent().parent();
+		$("li").eq(4).parent().parent().parent();
+		$("li").eq(4).parent().parent().prev();
 
 	});
 </script>
