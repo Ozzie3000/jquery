@@ -6,6 +6,15 @@
 <meta name="description" content="HTML5 demos" />
 <!--
 <link rel="stylesheet" href="./css/.css" type="text/css" -->
+<style type="text/css">
+	.special{
+		color: blue;
+	}
+
+ul{
+	font-size: 2vw;
+}
+</style>
 </head>
 <body>
 	<h3>DOM traversal</h3>
@@ -34,13 +43,22 @@
 		$("li").last();
 		$("li").first().hide();
 		$("li").first().show();
-		$("li:eq(2)").hide();
+		//$("li:eq(2)").hide();
 		$("li").eq(0).siblings();
 		$("li").eq(4).parent();
 		$("li").eq(4).parent().parent();
 		$("li").eq(4).parent().parent().parent();
 		$("li").eq(4).parent().parent().prev();
+		$("li").eq(4).parent().parent().prev().prev();
 
+		$("li").on('click', function(){
+			//$(this).next().hide();
+			//$("li").next().remove();
+			$(this).removeClass('special');
+			$(this).siblings().addClass('special');
+			$(this).parent().addClass('special');
+			$(this).closest('.list').addClass('special'); // up the chain till class list
+		});
 	});
 </script>
 </body>
