@@ -74,6 +74,8 @@
 	</footer>
 <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript">
+$(function(){
+
 	console.log("ora! ora! ora! ora!");
 	$('#aName').click(function(){
 		var nombre = $('#yourName').val();
@@ -119,8 +121,15 @@ $('#yourName').keypress(function(){
 
 
 
-			
-	</script>
+}			
+</script>
 
 </body>
 </html>
+
+
+
+
+if(e.which == 13) {
+        alert('You pressed enter!');
+    }
