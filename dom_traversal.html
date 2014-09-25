@@ -26,7 +26,7 @@ ul{
 		<li class="special">two</li>
 		<li>three</li>
 		<li>
-			<ul class="sbulist">
+			<ul class="sublist">
 				<li>a</li>
 				<li>b</li>
 				<li>c</li>
@@ -67,7 +67,7 @@ ul{
 			$(this).find('li').filter('.special').remove();
 		});
 */
-
+/*
 		$('.list').on('mouseenter', function(){
 			$(this).find('.special').hide();
 		});
@@ -77,14 +77,34 @@ ul{
 			//below is the same but much slower
 			//$(".special").show();
 		});
-
+*/
+/*
 		$("li").on("click", function(){
-			if(){
-
+				alert("special");
+		});
+*/
+/* this will hide both child and parent if li is embedded in another li
+		$("li").on("click", function(){
+			$(this).hide();
+			if( $(this).is(".special")){
+				alert("especial");
+			}else{
+				alert("not especial!")
 			}
-		})
+		});
+*/
 
-		
+	$("sublist").on("click", function(){
+			$(this).hide();
+			if( $(this).is(".special")){
+				alert("especial");
+			}else{
+				alert("not especial!")
+			}
+		});
+
+
+
 	});
 </script>
 </body>
