@@ -93,8 +93,8 @@ ul{
 			}
 		});
 */
-
-	$("sublist").on("click", function(){
+/*  only hides li  in sublist
+		$(".sublist li").on("click", function(){
 			$(this).hide();
 			if( $(this).is(".special")){
 				alert("especial");
@@ -102,7 +102,16 @@ ul{
 				alert("not especial!")
 			}
 		});
-
+*/
+		$("li").on("click", function(){
+			console.log("clicked li");
+			if( $(this).parent().is(".sublist")){
+				$(this).hide();
+				alert("subs suck");
+			}else{
+				alert("not a sub!")
+			}
+		});
 
 
 	});
