@@ -54,7 +54,7 @@
 		<input id="yourName" type="text" value="Enter Your First Name" 
 		onblur="if(this.value=='')this.value='Enter Your First Name';" 
 		onfocus="if(this.value=='Enter Your First Name')this.value='';" />
-		<button id="aName">Submit</button>
+		<button id="aName" class="submitted">Submit</button>
 		<br />
 		<ul>
 			<li>meat</li>
@@ -64,7 +64,7 @@
 		<input id="itemz" type="text" value="Enter a grocery item" 
 		onblur="if(this.value=='')this.value='Enter a grocery item';" 
 		onfocus="if(this.value=='Enter a grocery item')this.value='';" />
-		<button id="gotcha">Submit</button>
+		<button id="gotcha" class="submitted">Submit</button>
 	</div>
 
 
@@ -118,6 +118,8 @@ $('#yourName').keypress(function(){
 	    addItem;
 	   }
 	  });
+
+
 
 
 
