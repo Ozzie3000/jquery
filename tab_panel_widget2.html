@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jquery | </title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<link rel="stylesheet" href="widget.css" type="text/css" />
+<style type="text/css">
+/*
+.tab-panels{
+
+}
+.tabs{
+
+}
+.active{}
+.panel{}
+#panel1{}
+#panel2{}
+#panel3{}
+#panel4{}
+li{
+	display: inline-block;
+	color: white;
+	background-color: grey;
+	padding: 7px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px; 
+}
+*/
+
+</style>
+</head>
+<body>
+	<h3></h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+	<div class="tab-panels">
+		<ul class="tabs">
+			<li rel="panel1" class="active">panel1</li>
+			<li rel="panel2">panel2</li>
+			<li rel="panel3">panel3</li>
+			<li rel="panel4">panel4</li>
+		</ul>
+
+		<div id="panel1" class="panel active">
+			content1<br />
+			content1<br />
+			content1<br />
+			content1<br />
+			content1<br />
+		</div>
+
+		<div id="panel2" class="panel">
+			content2<br />
+			content2<br />
+			content2<br />
+			content2<br />
+			content2<br />
+		</div>
+
+		<div id="panel3" class="panel">
+			content3<br />
+			content3<br />
+			content3<br />
+			content3<br />
+			content3<br />
+		</div>
+
+		<div id="panel4" class="panel">
+			content4<br />
+			content4<br />
+			content4<br />
+			content4<br />
+			content4<br />
+		</div>
+	</div>
+
+
+<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".tab-panels .tabs li").on("click", function(){
+			$(".tab-panels .tabs li.active").removeClass("active");
+			$(this).addClass("active");
+			//figure out which panel to show
+			var panelToShow = $(this).attr("rel");
+				//alert(panelToShow);
+
+			//hide current panel
+			$(".tab-panels .panel.active").slideUp(300, function(){
+				/*alert(); callback function do something (300, ) then do something (time, func alert();    */
+				$(this).removeClass("active");
+				$("#"+panelToShow).slideDown(300, function(){
+					$(this).addClass("active");
+				});
+			});
+			//show new panel
+
+		});
+
+
+
+
+	});
+</script>
+</body>
+</html>
