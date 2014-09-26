@@ -39,10 +39,10 @@ li{
 
 	<div class="tab-panels">
 		<ul class="tabs">
-			<li class="active">panel1</li>
-			<li>panel2</li>
-			<li>panel3</li>
-			<li>panel4</li>
+			<li rel="panel1" class="active">panel1</li>
+			<li rel="panel2">panel2</li>
+			<li rel="panel3">panel3</li>
+			<li rel="panel4">panel4</li>
 		</ul>
 
 		<div id="panel1" class="panel active">
@@ -80,6 +80,31 @@ li{
 
 
 <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".tab-panels .tabs li").on("click", function(){
+			$(".tab-panels .tabs li.active").removeClass("active");
+			$(this).addClass("active");
+			//figure out which panel to show
+			var panelToShow = $(this).attr("rel");
+				//alert(panelToShow);
+
+			//hide current panel
+			$(".tab-panels .panel.active").slideUp(300, function(){
+				/*alert(); callback function do something (300, ) then do something (time, func alert();    */
+				$(this).removeClass("active");
+				$("#"+panelToShow).slideDown(300, function(){
+					$(this).addClass("active");
+				});
+			});
+			//show new panel
+
+		});
+
+
+
+
+	});
+</script>
 </body>
 </html>
