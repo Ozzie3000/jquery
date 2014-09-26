@@ -24,7 +24,7 @@
 	color: #fff;
 	background: #665;
 }
-.tab-panel ul li.active{
+.tab-panels ul li.active{
 	color: #fff;
 	background: #665;
 }
@@ -34,6 +34,6 @@
 	padding: 30px;
 	border-radius: 0 0 10px 10px;
 }
-.tab-panels .panel-active{
+.tab-panels .panel.active{
 	display: block;
 }
