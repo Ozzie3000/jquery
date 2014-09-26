@@ -6,30 +6,6 @@
 <meta name="description" content="HTML5 demos" />
 <link rel="stylesheet" href="widget.css" type="text/css" />
 <style type="text/css">
-/*
-.tab-panels{
-
-}
-.tabs{
-
-}
-.active{}
-.panel{}
-#panel1{}
-#panel2{}
-#panel3{}
-#panel4{}
-li{
-	display: inline-block;
-	color: white;
-	background-color: grey;
-	padding: 7px;
-	-moz-border-radius: 0px;
-	-webkit-border-radius: 5px 5px 0px 0px;
-	border-radius: 5px 5px 0px 0px; 
-}
-*/
-
 </style>
 </head>
 <body>
@@ -78,19 +54,62 @@ li{
 		</div>
 	</div>
 
+	<div class="tab-panels">
+		<ul class="tabs">
+			<li rel="panel5" class="active">panel5</li>
+			<li rel="panel6">panel6</li>
+			<li rel="panel7">panel7</li>
+			<li rel="panel8">panel8</li>
+		</ul>
+
+		<div id="panel5" class="panel active">
+			content5<br />
+			content5<br />
+			content5<br />
+			content5<br />
+			content5<br />
+		</div>
+
+		<div id="panel6" class="panel">
+			content6<br />
+			content6<br />
+			content6<br />
+			content6<br />
+			content6<br />
+		</div>
+
+		<div id="panel7" class="panel">
+			content7<br />
+			content7<br />
+			content7<br />
+			content7<br />
+			content7<br />
+		</div>
+
+		<div id="panel8" class="panel">
+			content8<br />
+			content8<br />
+			content8<br />
+			content8<br />
+			content8<br />
+		</div>
+	</div>
 
 <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript">
 	$(function(){
+
 		$(".tab-panels .tabs li").on("click", function(){
-			$(".tab-panels .tabs li.active").removeClass("active");
+			var $curPanel = $(this).closest(".tab-panels");
+
+			$curPanel.find(".tabs li.active").removeClass("active");
 			$(this).addClass("active");
 
 			//figure out which panel to show
 			var panelToShow = $(this).attr("rel");
 
 			//hide current panel
-			$(".tab-panels .panel.active").slideUp(300, showNextPanel);
+			$curPanel.find(".panel.active").slideUp(300, showNextPanel);
 
 			//show next panel
 			function showNextPanel(){
