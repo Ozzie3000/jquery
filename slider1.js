@@ -65,7 +65,7 @@ $(function(){
 
 	var width = 920;
 	var animationSpeed = 1000;
-	var pause = 3000;
+	var pause = 1000;
 	var currentSLide = 1;
 // lets cache DOM
 	var $slider = $('#slider');
@@ -74,8 +74,8 @@ $(function(){
 
 	var interval;
 
-	function startSLider(){
-		invterval = setInterval(function(){
+	function startSlider(){
+		interval = setInterval(function(){
 			$slideContainer.animate({"margin-left": "-="+width}, animationSpeed, function(){
 					currentSLide++;
 					if(currentSLide === $slides.length){
@@ -84,12 +84,12 @@ $(function(){
 					}
 				});
 		}, pause);
+	}
 
+	function stopSlider(){
+		clearInterval(interval);
+	}
 
-
-
-
-
-
-$slider.on('mouseenter', pauseSlide).on('mouseleave', startSlider);
+	$slider.on('mouseenter', stopSlider).on('mouseleave', startSlider);
+	startSlider();
 });
