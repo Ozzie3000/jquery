@@ -39,7 +39,7 @@ $(function(){
 	}, pause);
 */
 
-//step4 add callback
+/*step4 add callback
 //configuration
 	var width = 920;
 	var animationSpeed = 1000;
@@ -52,8 +52,44 @@ $(function(){
 	setInterval(function(){
 		$slideContainer.animate({"margin-left": "-="+width}, animationSpeed, function(){
 				currentSLide++;
+				if(currentSLide === $slides.length){
+					currentSLide =1;
+					$slideContainer.css('margin-left',0);
+				}
 			});
 	}, pause);
+*/
+
+//step 5 add mouseenter and mouseexit
+//create a way to step slider.  add setInterval
+
+	var width = 920;
+	var animationSpeed = 1000;
+	var pause = 3000;
+	var currentSLide = 1;
+// lets cache DOM
+	var $slider = $('#slider');
+	var $slideContainer = $slider.find('.slides');
+	var $slides = $slideContainer.find('.slide');
+
+	var interval;
+
+	function startSLider(){
+		invterval = setInterval(function(){
+			$slideContainer.animate({"margin-left": "-="+width}, animationSpeed, function(){
+					currentSLide++;
+					if(currentSLide === $slides.length){
+						currentSLide =1;
+						$slideContainer.css('margin-left',0);
+					}
+				});
+		}, pause);
 
 
+
+
+
+
+
+$slider.on('mouseenter', pauseSlide).on('mouseleave', startSlider);
 });
